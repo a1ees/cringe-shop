@@ -1,0 +1,21 @@
+.page {
+  min-height: 100vh;
+  height: 100%;
+  background: var(--backbroung-primary-color);
+  display: flex;
+  transition: background-color 0.1s linear;
+  font-family: "Gotham pro";
+  font-weight: 400;
+
+  &__sidebar {
+    width: 20vw;
+    margin-right: 40px;
+    background-color: var(--sidebar-background-color);
+    transition: background-color 0.1s linear;
+  }
+
+  &__container {
+    width: 60vw;
+    padding-bottom: 20px;
+  }
+}
