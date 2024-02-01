@@ -19,7 +19,7 @@ function App() {
             <div className='page__sidebar'>
                 <ThemeSelect theme={theme} setTheme={setTheme}/>
             </div>
-            <div className="page__container">
+            <div className="page__container container">
                 <Input searchValue={searchValue} setSearchValue={setSearchValue}/>
                 <BackButton />
                 <Routes>

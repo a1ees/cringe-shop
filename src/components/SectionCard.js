@@ -27,7 +27,7 @@ const SectionCard = (props) => {
     };
 
     const getCardListByInput = () => { // возвращаем все айтемы 3го уровня
-        const {list} = cat;
+        let {list} = cat;
         const flatList = (arr) => arr.reduce((acc, item) =>
             acc.concat(transformItem(item)), []);
 
@@ -54,12 +54,12 @@ const SectionCard = (props) => {
         }
     }, [props.category, props.pathname, props.subcategory, getCardListByPath])
     return (
-        <div className="cards">
+        <div className="container__cards">
             {cardList && !props.searchValue.length
                 ? cardList.map((item, index) => <CardTemplate key={index} item={item}/>)
                 : props.searchValue.length
                     ? filteredCards.map((item, index) => <CardTemplate key={index} item={item}/>)
-                    : !filteredByInput().length
+                    : !filteredCards.length
                         ? <div className="card__not-found">Товаров не найдено</div>
                         : null
             }
