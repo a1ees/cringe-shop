@@ -2,7 +2,7 @@ import React from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import '../../assets/styles/BackButton.scss';
 
-const BackButton = () => {
+const BackButton: React.FC = () => {
     const navigate = useNavigate();
     const location = useLocation();
 
@@ -22,7 +22,7 @@ const BackButton = () => {
             </button>
         )
     );
-}
+};
 
 export default BackButton;
 
