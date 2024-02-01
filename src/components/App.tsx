@@ -4,15 +4,14 @@ import ThemeSelect from "./UI/ThemeSelect";
 import * as React from "react";
 import {useState} from "react";
 import Input from "./UI/Input";
-import {Routes, Route, useLocation} from 'react-router-dom';
+import {Routes, Route} from 'react-router-dom';
 import {useTheme} from '../hooks/use-theme'
 import SectionCard from "./SectionCard";
 import BackButton from "./UI/BackButton";
 
 function App() {
-    const [searchValue, setSearchValue] = useState('');
-    const {theme, setTheme} = useTheme();
-    const location = useLocation();
+    const [searchValue, setSearchValue] = useState<string>('');
+    const { theme, setTheme } = useTheme();
 
     return (
         <div className='page'>
@@ -24,8 +23,8 @@ function App() {
                 <BackButton />
                 <Routes>
                     <Route path='/' element={<SectionCard searchValue={searchValue} />} />
-                    <Route path='/:id' element={<SectionCard searchValue={searchValue} subcategory={true} pathname={location.pathname} />} />
-                    <Route path='/:id/:id' element={<SectionCard searchValue={searchValue} subcategory={true} pathname={location.pathname} />} />
+                    <Route path='/:id' element={<SectionCard searchValue={searchValue} subcategory={true}/>} />
+                    <Route path='/:id/:id' element={<SectionCard searchValue={searchValue} subcategory={true} />} />
                 </Routes>
             </div>
         </div>
